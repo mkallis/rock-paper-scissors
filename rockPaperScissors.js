@@ -52,3 +52,18 @@ const determineWinner = (userChoice, computerChoice) => {
         }
     }
 }
+
+// Play the game!
+const playGame = () => {
+    const userChoice = getUserChoice('paper'); // type user input here
+    const computerChoice = getComputerChoice();
+
+    // as long as the user choice is valid, we determine a winner
+    if (userChoice !== 'invalid input') {
+        console.log(determineWinner(userChoice, computerChoice));
+    } else {
+        console.log('Please input rock, paper, or scissors.')
+    }
+}
+
+playGame();
