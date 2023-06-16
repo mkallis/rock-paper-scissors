@@ -23,3 +23,32 @@ const getComputerChoice = () => {
     return 'Something went wrong.'
     }
 }
+
+// Rock beats scissors. Scissors beats paper. Paper beats rock.
+const determineWinner = (userChoice, computerChoice) => {
+    console.log(`You chose ${userChoice}. The computer chose ${computerChoice}.`);
+    if (userChoice === computerChoice) {
+        return 'The game was a tie!';
+    }
+    if (userChoice === 'rock') {
+        if (computerChoice === 'paper') {
+        return 'You won! :)';
+        } else {
+        return 'You lost. :('
+        }
+    }
+    if (userChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+        return 'You lost. :(';
+        } else {
+        return 'You won! :)';
+        }
+    }
+    if (userChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+        return 'You lost. :(';
+        } else {
+        return 'You won! :)';
+        }
+    }
+}
