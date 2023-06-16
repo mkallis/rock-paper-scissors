@@ -1,9 +1,10 @@
 // Let's play Rock, Paper, Scissors!
 
-// User can input rock, paper, or scissors
+// User can input rock, paper, scissors, or bomb
+// Bomb is a special cheat code that always wins
 const getUserChoice = userInput => {
     userInput = userInput.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' ) {
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
       return userInput;
     } else {
       return 'invalid input'
@@ -24,9 +25,12 @@ const getComputerChoice = () => {
     }
 }
 
-// Rock beats scissors. Scissors beats paper. Paper beats rock.
+// Rock beats scissors. Scissors beats paper. Paper beats rock. Bomb is a special cheat code that always wins
 const determineWinner = (userChoice, computerChoice) => {
     console.log(`You chose ${userChoice}. The computer chose ${computerChoice}.`);
+    if (userChoice === 'bomb') {
+        return 'BOOOOMM!! You automatically win!!';
+    }
     if (userChoice === computerChoice) {
         return 'The game was a tie!';
     }
